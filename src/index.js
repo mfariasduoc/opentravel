@@ -21,14 +21,16 @@ const client = new ApolloClient({
 // iniciar msw antes de cargar la aplicacion
 async function iniciarAplicacion() {
     try {
-        const { worker } = await import('./mocks/browser');
+        if (process.env.NODE_ENV === 'development') {
+            const { worker } = await import('./mocks/browser');
 
-        await worker.start({
-            serviceWorker: {
-                url: `${PUBLIC_URL}/mockServiceWorker.js`
-            },
-            onUnhandledRequest: 'bypass'
-        });
+            await worker.start({
+                serviceWorker: {
+                    url: `${PUBLIC_URL}/mockServiceWorker.js`
+                },
+                onUnhandledRequest: 'bypass'
+            });
+        }
 
         const root = ReactDOM.createRoot(
             document.getElementById('root')
@@ -49,5 +51,7 @@ async function iniciarAplicacion() {
         );
     }
 }
+
 iniciarAplicacion();
+
 reportWebVitals();
