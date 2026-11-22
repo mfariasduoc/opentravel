@@ -1,0 +1,51 @@
+/* estilos generales */
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.contenido {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 25px 20px;
+}
+.subtitle {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #17365D;
+    margin-bottom: 20px;
+}
+
+/* tarjetas de destinos */
+.destino-card {
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.destino-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* contenedor de destinos */
+.destinos-cont {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+@media (max-width: 480px) {
+    .contenido {
+        padding: 15px 12px;
+    }
+    .destinos-cont {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    .destino-card {
+        width: 100%;
+    }
+}
