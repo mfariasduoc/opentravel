@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import DestinationCard from './components/DestinationCard';
-
+const PUBLIC_URL = process.env.PUBLIC_URL || '';
 function DestinationList() {
     const [destinations, setDestinations] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     // consulta rest para obtener los destinos
-    function cargarDestinos() {
+ function cargarDestinos() {
         setLoading(true);
         setError(null);
-        fetch('/api/destinations')
+
+        fetch(`${PUBLIC_URL}/api/destinations`)
             .then((response) => {
                 if (!response.ok) {
-                    throw new Error('No fue posible obtener los destinos.');
+                    throw new Error(
+                        'No fue posible obtener los destinos.'
+                    );
                 }
                 return response.json();
             })
@@ -25,9 +28,11 @@ function DestinationList() {
                 setLoading(false);
             });
     }
+
     useEffect(() => {
         cargarDestinos();
     }, []);
+
     if (loading) {
         return (
             <div className="text-center py-16">
@@ -37,19 +42,24 @@ function DestinationList() {
             </div>
         );
     }
+
     if (error) {
         return (
             <div className="bg-rose-50 border border-rose-200 text-rose-700 p-6 rounded-xl text-center">
-                <p className="font-bold mb-2">Error al cargar destinos</p>
+                <p className="font-bold mb-2">
+                    Error al cargar destinos
+                </p>
                 <p className="text-sm mb-4">{error}</p>
                 <button
                     onClick={cargarDestinos}
-                    className="bg-blue-900 hover:bg-blue-800 text-white px-5 py-2 rounded-lg text-sm font-semibold">
+                    className="bg-blue-900 hover:bg-blue-800 text-white px-5 py-2 rounded-lg text-sm font-semibold"
+                >
                     Intentar nuevamente
                 </button>
             </div>
         );
     }
+
     return (
         <div>
             <div className="mb-8">
@@ -60,6 +70,7 @@ function DestinationList() {
                     Selecciona un país y descubre sus atractivos turísticos.
                 </p>
             </div>
+
             {destinations.length > 0 ? (
                 <div className="destinos-cont">
                     {destinations.map((destination) => (
@@ -67,7 +78,6 @@ function DestinationList() {
                             key={destination.id}
                             destination={destination}
                         />
-
                     ))}
                 </div>
             ) : (
@@ -80,4 +90,5 @@ function DestinationList() {
         </div>
     );
 }
+
 export default DestinationList;

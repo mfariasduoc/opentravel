@@ -1,5 +1,5 @@
 import { http, graphql, HttpResponse, delay } from 'msw';
-
+const PUBLIC_URL = process.env.PUBLIC_URL || '';
 // destinos disponibles en sudamerica
 const destinations = [
     {
@@ -596,7 +596,7 @@ const travelOptions = {
 export const handlers = [
 
     // REST para obtener todos los destinos
-    http.get('/api/destinations', () => {
+    http.get(`${PUBLIC_URL}/api/destinations`, () => {
         return HttpResponse.json(destinations);
     }),
 
