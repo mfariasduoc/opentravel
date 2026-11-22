@@ -1,21 +1,15 @@
 {
   "files": {
     "main.css": "/opentravel/static/css/main.b6970e7e.css",
-    "main.js": "/opentravel/static/js/main.d8c46b74.js",
-    "static/js/209.192f58de.chunk.js": "/opentravel/static/js/209.192f58de.chunk.js",
-    "static/js/453.a29cfccd.chunk.js": "/opentravel/static/js/453.a29cfccd.chunk.js",
-    "static/js/540.e2d97e51.chunk.js": "/opentravel/static/js/540.e2d97e51.chunk.js",
-    "static/js/966.8c487e78.chunk.js": "/opentravel/static/js/966.8c487e78.chunk.js",
+    "main.js": "/opentravel/static/js/main.2fe4c569.js",
+    "static/js/453.52a64ea5.chunk.js": "/opentravel/static/js/453.52a64ea5.chunk.js",
     "index.html": "/opentravel/index.html",
     "main.b6970e7e.css.map": "/opentravel/static/css/main.b6970e7e.css.map",
-    "main.d8c46b74.js.map": "/opentravel/static/js/main.d8c46b74.js.map",
-    "209.192f58de.chunk.js.map": "/opentravel/static/js/209.192f58de.chunk.js.map",
-    "453.a29cfccd.chunk.js.map": "/opentravel/static/js/453.a29cfccd.chunk.js.map",
-    "540.e2d97e51.chunk.js.map": "/opentravel/static/js/540.e2d97e51.chunk.js.map",
-    "966.8c487e78.chunk.js.map": "/opentravel/static/js/966.8c487e78.chunk.js.map"
+    "main.2fe4c569.js.map": "/opentravel/static/js/main.2fe4c569.js.map",
+    "453.52a64ea5.chunk.js.map": "/opentravel/static/js/453.52a64ea5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b6970e7e.css",
-    "static/js/main.d8c46b74.js"
+    "static/js/main.2fe4c569.js"
   ]
 }
